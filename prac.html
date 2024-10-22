@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="traveliaApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module('traveliaApp', []);
+        app.controller('traveliaCtrl', function($scope) {
+            $scope.message = "After a visit to the beach, it's hard to believe that we live in a material world.";
+            
+            // Dynamic data for beaches
+            $scope.beaches = [
+                { name: 'Goa', description: "This place is known for its famous beaches, culture, climate, and historical places.", img: './img/beach1.jpg' },
+                { name: 'Kerela', description: "Kerala is not just a place; it's a feeling of serenity wrapped in nature's embrace.", img: './img/kerela.jpg' },
+                { name: 'Alibaug', description: "Alibaug’s beaches are a canvas, where the tides of time leave their mark.", img: './img/alibaug.jpg' },
+                { name: 'Vengurla', description: "Vengurla Beach is where the ocean whispers secrets of the Konkan coast.", img: './img/vebg.jpg' },
+                { name: 'Tarkarli', description: "Tarkarli is a small stretch of beach with Devbaug beach to its south and the Sindhudurg sea fort to its north.", img: './img/tarkalibeach.jpg' },
+                { name: 'Lakshadweep', description: "Escape to Lakshadweep, where the coral reefs are as vibrant as the dreams they inspire.", img: './img/lak.jpg' }
+            ];
+        });
+    </script>
+</head>
+<body ng-controller="traveliaCtrl">
+    <header class='header1'>
+        <nav class='navbar'>
+            <h1 class='logo'>Travelia</h1>
+            <ul id="nav">
+                <li class="navitems"><a href="./index.html">Home</a></li>
+                <li class="navitems"><a href="./about.html">About Us</a></li>
+                <li class="navitems"><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Image and Overlay Section -->
+    <div class="container3">
+        <img src="./img/Beaches.jpg" class="image">
+        <div class="overlay">
+            <h1>Beaches</h1>
+            <h2>Explore and Enjoy different beaches of India</h2>
+        </div>
+    </div>
+
+    <!-- Dynamic Message Section -->
+    <div class="center-text">
+        <p>{{message}}</p>
+    </div>
+
+    <!-- Dynamic Beaches Data from AngularJS -->
+    <section class="box-container">
+        <div class="box" ng-repeat="beach in beaches">
+            <img ng-src="{{beach.img}}" alt="Image of {{beach.name}}" class="box-image">
+            <div class="box-content">
+                <h3>{{beach.name}}</h3>
+                <p>{{beach.description}}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>We provide information and guide to travel and enjoy different places of India.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: sofinsameertamboli@gmail.com</p>
+                <p>Phone: 9850741125</p>
+                <p>Karmaveer Nagar, College Road, Islampur Maharashtra</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

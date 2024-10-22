@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container3 {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ace5ed; /* Light blue background */
+    color: #fff; /* White text */
+    display: flex;
+    align-items: center;
+    height: 500px; /* Fixed height for visual impact */
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.carousel {
+    position: relative;
+    width: 60%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hex-image {
+    width: 300px;
+    height: 300px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); /* Hexagonal shape */
+    object-fit: cover; /* Ensures the image covers the hexagon without distortion */
+    border: 10px solid #fff; /* White border around the hexagon */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.text-content {
+    max-width: 50%;
+}
+
+.text-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.text-content h2 {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-top: 0;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    border-radius: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 45%;
+    text-align: center;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.box-image {
+    width: 100%;
+    height: auto;
+}
+
+.box-content {
+    padding: 20px;
+}
+
+.box-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.box-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Adding hover effect to the text */
+.box-content h3:hover {
+    color: #ff5733; /* Highlight color on hover */
+    transition: color 0.3s ease;
+}

@@ -1,0 +1,308 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header1{
+  width: 100%;
+  height: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav-items {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 10px;
+  }
+}
+.logo {
+  font-size: 20px; /* Size of the logo text */
+  font-weight: bold; /* Makes the logo text bold */
+  color: #f5f3f2; /* Bright color for the logo */
+  text-transform: uppercase; /* Converts logo text to uppercase */
+  letter-spacing: 2px; /* Adds spacing between the letters */
+  margin: 0; /* Removes any default margin */
+  padding-top: 15px;
+  padding-left: 10px; /* Removes any default padding */
+ 
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px; /* Adds space between buttons */
+  z-index: 1000; /* Ensures the buttons stay above other content */
+}
+
+.top-button {
+  padding: 10px 20px;
+ 
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.top-button:hover {
+  background-color: #aca6a6;
+}
+
+.centered-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 150px; /* Adjust height as needed */
+  margin: 20px 0; /* Adjust margin to position the text below the header */
+  font-size: 24px; /* Adjust font size */
+  color: #232143; /* Text color */
+  font-family: Arial, sans-serif; /* Adjust font family */
+  font-size: 3em;
+}
+
+.centered-text p {
+  margin: 0;
+  padding: 0;
+  max-width: 100%; /* Limits the width of the text */
+}
+
+
+.animated-text {
+  font-family: 'Baloo Da 2', cursive;
+  font-size: 8.0em;
+  
+  color: #cbf4fc;
+  animation: expand 3s infinite ease-in-out;
+}
+
+@keyframes expand {
+  0%, 100% {
+      letter-spacing: 2px;
+  }
+  50% {
+      letter-spacing: 20px;
+  }
+}
+.header1 {
+  height: 100vh;
+  position: relative; /* Ensure it's positioned relative for z-index to work */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: changeBackground 12s infinite;
+  z-index: -1; /* Keeps it in the background */
+}
+
+@keyframes changeBackground {
+  0% {
+      background-image: url('../img/CH1.jpg'); /* Check if this image exists */
+  }
+  33% {
+      background-image: url('../img/CH2.jpg'); /* Check if this image exists */
+  }
+  66% {
+      background-image: url('../img/CH3.jpg'); /* Check if this image exists */
+  }
+  100% {
+      background-image: url('../img/CH1.jpg'); /* Check if this image exists */
+  }
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  z-index: 1; /* Ensure it's above the background */
+}
+.image-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.image-container {
+  position: relative;
+  width: 30%;
+  overflow: hidden; /* Ensure that the image fits within the container */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image {
+  width: 100%;
+  height: 100%; /* Ensures the image fills the container */
+  object-fit: cover; /* Ensures the image maintains aspect ratio while filling the container */
+  display: block;
+  border-radius: 10px;
+}
+
+.image-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 24px rgba(48, 46, 46, 0.2);
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: calc(100% - 40px); /* Ensure the text fits within the image with padding */
+  box-sizing: border-box;
+}
+
+
+.stylish-container {
+  display: flex;
+  align-items: center;
+  background-color: #93f3b0;
+  padding: 20px;
+  border-radius: 80px;
+  box-shadow: #4d4a4a;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px;
+}
+
+.image-box {
+  width: 50%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* Square shape */
+  overflow: hidden;
+  border-radius: 30px;
+  
+  margin-right: 20px;
+  transition: transform 0.2s ease;
+}
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.image-box:hover img {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.text-box {
+  width: 60%;
+}
+
+.text-box h2 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.text-box p {
+  font-size: 16px;
+  color: #1c163e;
+  line-height: 1.5;
+}
+
+footer {
+  background-color: #cac5c5;
+  color: rgb(12, 6, 6);
+  padding: 30px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 20px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #140f3d;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: rgb(14, 66, 26);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #1b591a;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid #cef969;
+  padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    margin: 10px 0;
+  }
+}

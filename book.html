@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header1 {
+            width: 100%;
+            height: 60px; 
+        }
+
+        .navbar {
+            border: 2px;
+            background-color: rgb(55, 55, 64);
+        }
+
+        .header1 .logo,
+        header .navbar a {
+            color: rgb(177, 178, 186);
+        }
+
+        .header1 .navbar .logo {
+            float: left;
+            color: rgb(232, 235, 237);
+            font-size: 1.5rem;
+        }
+
+        .header1 .navbar .navitems {
+            float: right;
+            color: aliceblue;
+        }
+
+        .header1 .navbar .navitems {
+            display: inline-block;
+        }
+
+        .navbar::after {
+            content: "";
+            display: flex;
+            justify-content: center;
+            clear: both;
+        }
+
+        #nav {
+            color: black;
+        }
+
+        ul, li {
+            padding-top: 0.5em;
+            padding-right: 4em;
+            font-weight: 600;
+            color: black;
+            gap: 20px;
+        }
+
+        .booking-page {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 60px); 
+        }
+
+        .image-container {
+            width: 100%;
+            height: 160%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 110%;
+            object-fit: cover; 
+        }
+
+        .booking-container {
+            position: absolute; 
+            top: calc(50% + 30%); 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            z-index: 2; 
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .booking-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .booking-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header class='header1'>
+        <nav class='navbar'>
+            <h1 class='logo'>Travelia</h1>
+            <ul id="nav">
+                <li class="navitems"><a href="./index.html">Home</a></li>
+                <li class="navitems"><a href="./about.html">About Us</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div class="booking-page">
+        <!-- Image on the left -->
+        <div class="image-container">
+            <img src="./img/beach1.jpg" alt="Beautiful Destination">
+        </div>
+
+        
+        <div class="booking-container">
+            <h2>Book Your Trip</h2>
+            <form class="booking-form" id="bookingForm">
+                <!-- Select Destination -->
+                <label for="destination">Select Destination:</label>
+                <select id="destination" name="destination" required>
+                    <option value="">Select a destination</option>
+                    <option value="goa">Goa</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="alibaug">Alibaug</option>
+                    <option value="vengurla">Vengurla</option>
+                    <option value="tarkarli">Tarkarli</option>
+                    <option value="lakshadweep">Lakshadweep</option>
+                </select>
+                <label for="transport">Transport Mode:</label>
+                <select id="transport" name="transport" required>
+                    <option value="">Select transport mode</option>
+                    <option value="Car">Car</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Train">Train</option>
+                    <option value="Flight">Flight</option>
+                    <option value="Boat">Boat</option>
+                </select>
+
+                <!-- Select Dates -->
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <!-- Number of People -->
+                <label for="people">Number of People:</label>
+                <input type="number" id="people" name="people" min="1" max="10" required>
+
+                <!-- Contact Information -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Book Now</button>
+            </form>
+
+            <!-- Confirmation Message -->
+            <p id="confirmationMessage" style="display:none; color: green; text-align: center; margin-top: 20px;">
+                Your booking has been done successfully!
+            </p>
+        </div>
+    </div>
+
+    <script src="book.js"></script>
+</body>
+</html>
